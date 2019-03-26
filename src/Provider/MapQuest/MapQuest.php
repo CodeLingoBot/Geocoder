@@ -135,7 +135,7 @@ final class MapQuest extends AbstractHttpProvider implements Provider
             $params[static::KEY_LOCATION] = $this->mapAddressToArray($address);
             $options[static::KEY_INTL_MODE] = static::MODE_5BOX;
             $useGetQuery = false;
-        } else {
+        } else{
             $addressAsText = $query->getText();
 
             if (!$addressAsText) {
@@ -149,7 +149,6 @@ final class MapQuest extends AbstractHttpProvider implements Provider
 
             $params[static::KEY_LOCATION] = $addressAsText;
         }
-
         $bounds = $query->getBounds();
         if ($bounds instanceof Bounds) {
             $options[static::KEY_BOUNDING_BOX] = $this->mapBoundsToArray($bounds);
